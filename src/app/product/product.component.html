@@ -1,0 +1,48 @@
+<h2>Products</h2>        
+<ng-container *ngIf="data.length==0; else loading">
+    No products to display
+</ng-container>
+<ng-template #loading>
+    <div *ngIf="data.length>0">
+        <div *ngFor="let data of data">                 
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                    <img class="media-object" src="{{ data.imageUrl }}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        {{ data.productName }}  
+                    </h4>                
+                    {{ data.releasedDate|date|uppercase }} 
+                    <rating [rating-value]="data.rating" [numOfReviews]="data.numOfReviews"></rating>
+                    <div [ngSwitch]="data.rating">
+                    <p *ngSwitchCase="1">
+                    Poor
+                    </p>
+                    <p *ngSwitchCase="2">
+                    Fair
+                    </p>
+                    <p *ngSwitchCase="3">
+                    Good
+                    </p>
+                    <p *ngSwitchCase="4">
+                    Very Good
+                    </p>
+                    <p *ngSwitchCase="5">
+                    Excellent
+                    </p>
+                    <p *ngSwitchDefault>
+                    Not Rated
+                    </p>
+                    </div>
+                    <br>                                            
+                    {{ data.description|truncate:50 }}
+                </div>
+            </div> 
+        </div> 
+    </div>   
+</ng-template>
+
+      
