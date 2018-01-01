@@ -8,13 +8,12 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
 import { RatingComponent } from './rating/rating.component';
+import { JumbotronComponent } from './jumbotron/jumbotron.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 //Custom Pipes
 import {TruncatePipe} from './custompipes/truncate.pipe';
-import { JumbotronComponent } from './jumbotron/jumbotron.component';
-
-
-
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,9 @@ import { JumbotronComponent } from './jumbotron/jumbotron.component';
     RatingComponent, 
     ProductComponent,
     TruncatePipe,
-    JumbotronComponent
+    JumbotronComponent,
+    UserFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
