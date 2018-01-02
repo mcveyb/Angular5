@@ -5,6 +5,7 @@ import { RatingComponent } from './rating/rating.component';
 @Component({
   selector: 'app-root',
   template: ` 
+      <login></login>
       <user-form></user-form>   
       <product></product>
       <bs-jumbotron>
